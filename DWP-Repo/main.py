@@ -3,7 +3,7 @@ Name: Free Rosas
 Date: 7/11/2014
 Assignment: MadLib
 """
-
+'''
 print "***************************************" #put these as makers to make them easy to read
 #function created for title
 band = "Plain White T's"
@@ -22,7 +22,7 @@ print "---------------------------------------"#put these as makers to make them
 print "Hey there " + delilah
 print "What's it like in " + nyc
 print "But babe, tonight you look so pretty"
-#conditional statement / if yes: "delilah" is pretty, if no: delilah isn't
+#conditional statement(non-logical operator) / if yes: "delilah" is pretty, if no: delilah isn't
 if yes_no == "Yes":
     print "Yes you do!"
     print "Times Square can't shine as bright as you"
@@ -52,24 +52,30 @@ for v in verse_two:
     print v
     pass
 #chorus
-chorus = raw_input()
+chorus = 3 #declaring variable
 print "Chorus-----------------------"#put these as makers to make them easy to read
-#while loop
-i= 0
-while i<4:
-    print "Oh it's what you do to me"
+#if statement w/ math operations
+if chorus < 3:
+    #while loop to create chorus
+    i= 0
+    while i<4:
+        print "Oh it's what you do to me"
     i= i+1
-print "What you do to me"
+    print "What you do to me"
+else:
+    print "You not ready?? WHY NOT!"
+
+
 print "Third Verse------------------------"
 #dictionary
-hard = raw_input("Enter a text?")
+hard = raw_input("Enter a texture?")
 honey = raw_input("Enter a word that rhymes with funny?")
 someday = raw_input("Enter a word that rhymes with sunday?")
 guitar = raw_input("Enter any instrument.")
 verse_three = dict()
 verse_three = {"0": "I know times are getting ",
                "1": "But just believe me, ",
-               "2": "I'll pay the bills with this",
+               "2": " I'll pay the bills with this ",
                "3": "We'll have it good",
                "4": "We'll have the life we knew we would",
                "5": "My word is good"}
@@ -82,4 +88,21 @@ print verse_three[str(3)]
 print verse_three[str(4)]
 print verse_three[str(5)]
 
+print"***************************************"
+'''
 
+#print "Hey there " + delilah
+l1 ="I've got so much left to say"
+print len(l1)
+l2 = "If every simple song I wrote to you"
+print len(l2)
+l3 = "Would take your breath away"
+print len(l3)
+l4 = "I'd write it all"
+print len(l4)
+l5 = "Even more in love with me you'd fall"
+print len(l5)
+l6 = "We'd have it all"
+print len(l6)
+l_total = len(l5) + len(l4) +len(l3)+ len(l2)+ len(l1)
+print l_total
