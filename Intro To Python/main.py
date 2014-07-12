@@ -52,7 +52,7 @@ characters.append("obi won")
 
 #Dictionary
 
-movies = dict() #create dictionaty object
+movies = dict() #create dictionary object
 movies = {"Star Wars": "Darth Vader",
           "Silence of the Lambs":"Hannibal Lecter"}
 print movies["Star Wars"]
