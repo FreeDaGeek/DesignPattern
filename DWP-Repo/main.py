@@ -52,6 +52,7 @@ for v in verse_two:
     print v
     pass
 #chorus
+chorus = raw_input()
 print "Chorus-----------------------"#put these as makers to make them easy to read
 #while loop
 i= 0
@@ -61,20 +62,24 @@ while i<4:
 print "What you do to me"
 print "Third Verse------------------------"
 #dictionary
-hard = raw_input("Enter an adjective")
-honey = raw_input("Enter a word that rhymes with MONEY")
-someday = raw_input("Enter a word that ends with DAY")
+hard = raw_input("Enter a text?")
+honey = raw_input("Enter a word that rhymes with funny?")
+someday = raw_input("Enter a word that rhymes with sunday?")
+guitar = raw_input("Enter any instrument.")
 verse_three = dict()
 verse_three = {"0": "I know times are getting ",
                "1": "But just believe me, ",
-               "2": " I'll pay the bills with this guitar",
+               "2": "I'll pay the bills with this",
                "3": "We'll have it good",
-               "4": "We'll have the life we knew we would"}
+               "4": "We'll have the life we knew we would",
+               "5": "My word is good"}
+print"***************************************"
 print "Hey there " + delilah
 print verse_three[str(0)] + hard
 print verse_three[str(1)] + honey
-print someday + verse_three[str(2)]
+print someday + verse_three[str(2)] + guitar
 print verse_three[str(3)]
 print verse_three[str(4)]
+print verse_three[str(5)]
 
 
