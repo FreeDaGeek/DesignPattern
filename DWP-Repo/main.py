@@ -61,13 +61,20 @@ while i<4:
 print "What you do to me"
 print "Third Verse------------------------"
 #dictionary
+hard = raw_input("Enter an adjective")
+honey = raw_input("Enter a word that rhymes with MONEY")
+someday = raw_input("Enter a word that ends with DAY")
 verse_three = dict()
 verse_three = {"0": "I know times are getting ",
-               "1": "But just believe me, honey",
-               "2": "Someday I'll pay the bills with this guitar",
+               "1": "But just believe me, ",
+               "2": " I'll pay the bills with this guitar",
                "3": "We'll have it good",
                "4": "We'll have the life we knew we would"}
-print verse_three[0]
-
+print "Hey there " + delilah
+print verse_three[str(0)] + hard
+print verse_three[str(1)] + honey
+print someday + verse_three[str(2)]
+print verse_three[str(3)]
+print verse_three[str(4)]
 
 

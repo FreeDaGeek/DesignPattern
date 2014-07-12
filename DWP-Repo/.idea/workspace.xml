@@ -25,8 +25,8 @@
             <file leaf-file-name="main.py" pinned="false" current="false" current-in-tab="true">
               <entry file="file://$PROJECT_DIR$/../Intro To Python/main.py">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state vertical-scroll-proportion="0.8349381" vertical-offset="593" max-vertical-offset="1680">
-                    <caret line="80" column="0" selection-start-line="80" selection-start-column="0" selection-end-line="80" selection-end-column="0" />
+                  <state vertical-scroll-proportion="1.3507565" vertical-offset="308" max-vertical-offset="1680">
+                    <caret line="86" column="0" selection-start-line="86" selection-start-column="0" selection-end-line="86" selection-end-column="0" />
                     <folding />
                   </state>
                 </provider>
@@ -46,8 +46,8 @@
       <file leaf-file-name="main.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.85294116" vertical-offset="426" max-vertical-offset="1185">
-              <caret line="69" column="20" selection-start-line="69" selection-start-column="20" selection-end-line="69" selection-end-column="20" />
+            <state vertical-scroll-proportion="0.7058824" vertical-offset="486" max-vertical-offset="1290">
+              <caret line="66" column="20" selection-start-line="66" selection-start-column="20" selection-end-line="66" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -304,16 +304,16 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/../Intro To Python/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8349381" vertical-offset="593" max-vertical-offset="1680">
-          <caret line="80" column="0" selection-start-line="80" selection-start-column="0" selection-end-line="80" selection-end-column="0" />
+        <state vertical-scroll-proportion="1.3507565" vertical-offset="308" max-vertical-offset="1680">
+          <caret line="86" column="0" selection-start-line="86" selection-start-column="0" selection-end-line="86" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.85294116" vertical-offset="426" max-vertical-offset="1185">
-          <caret line="69" column="20" selection-start-line="69" selection-start-column="20" selection-end-line="69" selection-end-column="20" />
+        <state vertical-scroll-proportion="0.7058824" vertical-offset="486" max-vertical-offset="1290">
+          <caret line="66" column="20" selection-start-line="66" selection-start-column="20" selection-end-line="66" selection-end-column="20" />
           <folding />
         </state>
       </provider>
