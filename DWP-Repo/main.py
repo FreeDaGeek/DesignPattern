@@ -38,14 +38,7 @@ else:
 #second verse
 print "Second Verse-----------------------"#put these as makers to make them easy to read
 print "Hey there " + delilah
-'''
-l1 = raw_input("Enter a noun.")
-l2 = raw_input("Enter an adjective.")
-print "Hey there " + delilah
-print "Don't you worry about the" + l1
-print "I'm right there if you get" + l2
-'''
-verse_two = dict()
+#array
 verse_two = [
     "Don't you worry about the distance",
      "I'm right there if you get lonely",
@@ -54,15 +47,27 @@ verse_two = [
     "Listen to my voice, it's my disguise",
      "I'm by your side"
 ]
-
+#for loop
 for v in verse_two:
     print v
     pass
 #chorus
 print "Chorus-----------------------"#put these as makers to make them easy to read
+#while loop
 i= 0
 while i<4:
     print "Oh it's what you do to me"
     i= i+1
 print "What you do to me"
+print "Third Verse------------------------"
+#dictionary
+verse_three = dict()
+verse_three = {"0": "I know times are getting ",
+               "1": "But just believe me, honey",
+               "2": "Someday I'll pay the bills with this guitar",
+               "3": "We'll have it good",
+               "4": "We'll have the life we knew we would"}
+print verse_three[0]
+
+
 
