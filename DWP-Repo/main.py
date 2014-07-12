@@ -52,18 +52,20 @@ for v in verse_two:
     print v
     pass
 #chorus
-chorus = 3 #declaring variable
+#declaring variable
 print "Chorus-----------------------"#put these as makers to make them easy to read
-#if statement w/ math operations
-if chorus < 3:
-    #while loop to create chorus
-    i= 0
-    while i<4:
+#for statement w/ math operations
+chorus = 5
+if chorus > 3:
+    for i in range(0, 4):
         print "Oh it's what you do to me"
-    i= i+1
-    print "What you do to me"
+        i = i + 1
 else:
     print "You not ready?? WHY NOT!"
+    pass
+print "What you do to me"
+
+
 
 
 print "Third Verse------------------------"
@@ -99,7 +101,57 @@ print "Even more in love with me you'd fall"
 print "We'd have it all"
 
 print"***************************************"
+#fuctions to state how repetative the chorus is
+def count(l, c):
+    total = l / c
+    #print total
+    return total
+a = count(8, 2)
+print "This chorus says one line 8 time in the whole song!"
+print "With two chorus sections, they sang it " + str(a) + " times each chorus!"
+print "Look for you self!"
 
+print "Chorus-----------------------"
+#for statement w/ math operations
+chorus = 5
+if chorus > 3:
+    for i in range(0, 4):
+        print "Oh it's what you do to me"
+        i = i + 1
+else:
+    print "You not ready?? WHY NOT!"
+    pass
+print "What you do to me"
+
+print "********************************************"
+final_lines = 10
+if final_lines < 20:
+    print "A thousand miles seems pretty far"
+    print "But they've got planes and trains and cars"
+    print "I'd walk to you if I had no other way"
+    print "Our friends would all make fun of us"
+    print "And we'll just laugh along because we know"
+    print "That none of them have felt this way"
+    print "Delilah I can promise you"
+    print "That by the time we get through"
+    print "The world will never ever be the same"
+    print "And you're to blame"
+else:
+    pass
+print"----------------------------------------------"
+
+
+#variable deceleration
+first_line = "A thousand miles seems pretty far"
+second_line = "But they've got planes and trains and cars"
+third_line ="I'd walk to you if I had no other way"
+fourth_line ="Our friends would all make fun of us"
+fifth_line ="And we'll just laugh along because we know"
+sixth_line = "That none of them have felt this way"
+seventh_line = "Delilah I can promise you"
+eighth_line = "That by the time we get through"
+ninth_line = "The world will never ever be the same"
+tenth_line = "And you're to blame"
 
 
 
