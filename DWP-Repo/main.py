@@ -3,7 +3,7 @@ Name: Free Rosas
 Date: 7/11/2014
 Assignment: MadLib
 """
-'''
+
 print "***************************************" #put these as makers to make them easy to read
 #function created for title
 band = "Plain White T's"
@@ -89,20 +89,17 @@ print verse_three[str(4)]
 print verse_three[str(5)]
 
 print"***************************************"
-'''
 
-#print "Hey there " + delilah
-l1 ="I've got so much left to say"
-print len(l1)
-l2 = "If every simple song I wrote to you"
-print len(l2)
-l3 = "Would take your breath away"
-print len(l3)
-l4 = "I'd write it all"
-print len(l4)
-l5 = "Even more in love with me you'd fall"
-print len(l5)
-l6 = "We'd have it all"
-print len(l6)
-l_total = len(l5) + len(l4) +len(l3)+ len(l2)+ len(l1)
-print l_total
+print "Hey there " + delilah
+print "I've got so much left to say"
+print "If every simple song I wrote to you"
+print "Would take your breath away"
+print "I'd write it all"
+print "Even more in love with me you'd fall"
+print "We'd have it all"
+
+print"***************************************"
+
+
+
+
