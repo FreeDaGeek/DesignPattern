@@ -8,12 +8,18 @@ import webapp2  #use the webapp2 library
 
 class MainHandler(webapp2.RequestHandler): #declaring a class
     def get(self): #the fuction that starts everything
+        page = '''
+        <!DOCTYPE HTML>
+<html>
+    <head><title>Welcome!</title>
+    </head>
+     <body> Hello to Everyone!
+     </body>
+</html>
+        '''
         self.response.write('Hello world!')
-        #code goes here
 
-    def additional_functions(self):
-        pass
-        #code goes here
+
 
 
 #never touch this..Its magic
