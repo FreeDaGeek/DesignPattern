@@ -16,16 +16,15 @@ class MainHandler(webapp2.RequestHandler): #declaring a class
             <form method="GET" action="">
                 <label>Name: </label><input type="text" name="user" /><br/>
                 <label>Email: </label><input type="text" name="email" /><br/>
-
-                <label>Send me emails..</label>
-                <select name="email_options" name="send">
-                    <option value="daily">Daily</option>
-                    <option value="weekly">Weekly</option>
-                    <option value="bi-weekly">Bi-Weekly</option>
-                    <option value="monthly">Monthly</option>
+                 <label>Send me emails..</label>
+                <select name="email_options">
+                    <option value="daily" name="activity">Daily</option>
+                    <option value="weekly"name="activity">Weekly</option>
+                    <option value="bi-weekly"name="activity">Bi-Weekly</option>
+                    <option value="monthly"name="activity">Monthly</option>
                 </select><br/>
-
-                 <label>Newsletter Topics</label><br/><input type="checkbox" names= "topics" value="New in tech">Tech New Update<br/>
+                 <label>Newsletter Topics</label><br/>
+                 <input type="checkbox" names= "topics" value="New in tech">Tech New Update<br/>
                   <input type="checkbox" names= "topics" value="Design Inspiration">Design Inspiration<br/>
                  <input type="checkbox" names= "topics" value='Cool Codes "Cracked'>Cool Codes: "Cracked!"
                    <label>
@@ -40,8 +39,9 @@ class MainHandler(webapp2.RequestHandler): #declaring a class
         if self.request.GET:
             user = self.request.GET['user']
             email = self.request.GET['email']
-            send = self.request.GET['send']
-            self.response.write(page_head + user + ' ' + email + ' ' + send + page_body + page_close)
+            activity = self.request.GET['activity']
+            topics = self.request.GET['topics']
+            self.response.write(page_head + user + ' ' + activity +' '+ email + ' ' + topics +page_close)
         else:
             self.response.write(page_head + page_body + page_close) #prints infromation.
 
