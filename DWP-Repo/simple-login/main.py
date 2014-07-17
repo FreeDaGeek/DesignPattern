@@ -17,17 +17,17 @@ class MainHandler(webapp2.RequestHandler): #declaring a class
                 <label>Name: </label><input type="text" name="user" /><br/>
                 <label>Email: </label><input type="text" name="email" /><br/>
                  <label>Send me emails..</label>
-                <select name="email_options">
-                    <option value="daily" name="activity">Daily</option>
-                    <option value="weekly"name="activity">Weekly</option>
-                    <option value="bi-weekly"name="activity">Bi-Weekly</option>
-                    <option value="monthly"name="activity">Monthly</option>
+                <select name="activity">
+                    <option value="daily">Daily</option>
+                    <option value="weekly">Weekly</option>
+                    <option value="bi-weekly">Bi-Weekly</option>
+                    <option value="monthly">Monthly</option>
                 </select><br/>
                  <label>Newsletter Topics</label><br/>
-                 <input type="checkbox" names= "topics" value="New in tech">Tech New Update<br/>
-                  <input type="checkbox" names= "topics" value="Design Inspiration">Design Inspiration<br/>
-                 <input type="checkbox" names= "topics" value='Cool Codes "Cracked'>Cool Codes: "Cracked!"
-                   <label>
+                 <input type="checkbox" value="New in tech" name="tech">Tech New Update<br/>
+                  <input type="checkbox" value="Design Inspiration" name="design">Design Inspiration<br/>
+                 <input type="checkbox" value='Cool Codes "Cracked" name="code">Cool Codes: "Cracked!"
+                   <label></br>
                 <input type="submit" value="Submit" />
             </form>
             '''
@@ -40,8 +40,10 @@ class MainHandler(webapp2.RequestHandler): #declaring a class
             user = self.request.GET['user']
             email = self.request.GET['email']
             activity = self.request.GET['activity']
-            topics = self.request.GET['topics']
-            self.response.write(page_head + user + ' ' + activity +' '+ email + ' ' + topics +page_close)
+            tech = self.request.GET['tech']
+            design = self.request.GET['design']
+            code = self.request.GET['code']
+            self.response.write(page_head + user + ' ' + activity +' '+ email + ' '+ tech + design + code + page_close)
         else:
             self.response.write(page_head + page_body + page_close) #prints infromation.
 
