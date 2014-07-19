@@ -9,6 +9,23 @@ class MainHandler(webapp2.RequestHandler): #declaring a class
 <html>
     <head>
         <title>Simple Form</title>
+        <style>
+            body{width:800px; margin: 0 auto; background-color:teal;}
+            h1{font-family:cooper black;}
+            form{width:400px;
+                 font-family: helvetica;
+                 margin-top:50px;
+                 padding-left:10px;}
+
+            input{margin-top:20px;
+                  height: 22px;
+                  weight: 30px;
+                  outline:none;
+                  border-radius:5px;
+                  padding-left:10px;
+                  }
+        </style>
+
     </head>
      <body>
      '''
@@ -23,12 +40,8 @@ class MainHandler(webapp2.RequestHandler): #declaring a class
                     <option value="bi-weekly">Bi-Weekly</option>
                     <option value="monthly">Monthly</option>
                 </select><br/>
-                 <label>Newsletter Topics</label><br/>
-                 <input type="checkbox" value="New in tech" name="tech">Tech New Update<br/>
-                  <input type="checkbox" value="Design Inspiration" name="design">Design Inspiration<br/>
-                 <input type="checkbox" value='Cool Codes "Cracked" name="code">Cool Codes: "Cracked!"
-                   <label></br>
-                <input type="submit" value="Submit" />
+                 <input type="checkbox" value="ready" name="ready" required><small><i>Terms and Conditions</i></small><br/>
+                 <input type="submit" value="Submit" />
             </form>
             '''
 
@@ -40,12 +53,16 @@ class MainHandler(webapp2.RequestHandler): #declaring a class
             user = self.request.GET['user']
             email = self.request.GET['email']
             activity = self.request.GET['activity']
-            tech = self.request.GET['tech']
-            design = self.request.GET['design']
-            code = self.request.GET['code']
-            self.response.write(page_head + user + ' ' + activity +' '+ email + ' '+ tech + design + code + page_close)
+
+            self.response.write(page_head + page_close)
+            self.response.write("FreeDaGeek <i><small>says...</small></i><br>")
+            self.response.write("Thank you for signing up for"+ '  ' + activity + ' ' + "newsletters" + ' ' + user + "!<br>")
+            self.response.write("Your subscription will be sent to" + ' ' + email + ".")
+
+            #self.response.write("Welcome to TEAM AWESOME-SAUCE")
+            #self.response.write("You signed up for" + '  ' + activity + "newsletters" + "to be sent to" + ' ' + email + "!")
         else:
-            self.response.write(page_head + page_body + page_close) #prints infromation.
+            self.response.write(page_head + page_body + page_close) #prints information.
 
 #never touch this..Its magic
 app = webapp2.WSGIApplication([
