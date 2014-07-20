@@ -91,7 +91,7 @@ class MainHandler(webapp2.RequestHandler): #declaring a class
 
      '''
         page_body ='''
-        <div class="box">
+       <div class="box">
         <h1>Fabulous Female Coders</h1>
         <h2>Welcome to the place for the overlooked.</h2>
         <h3>Stay updated on accomplishments of females in the coding world!</h3>
