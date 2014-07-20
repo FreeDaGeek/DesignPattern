@@ -10,69 +10,101 @@ class MainHandler(webapp2.RequestHandler): #declaring a class
 <html>
     <head>
         <title>Simple Form</title>
+        <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
         <style>
+
+        html{
+            background-color:#2D232C;
+            width:100%;
+            height:100%;
+            font-family:helvetica;
+
+            }
 
             body {
                 width:600px;
-                background-color:teal;
+                margin: 0 auto;
+                background-color:#2D232C;
+
             }
 
             h1 {
-                font-family:helvetica;
+                font-family:lobster;
             }
+
+            h2, h3{
+            font-family: Poiret One;
+            }
+
+            .box{
+                background-color:#D1AA4F;
+                margin: 0 auto;
+                padding:15px;
+                margin-top:25%;
+                -webkit-border-radius: 40px;
+                -moz-border-radius: 40px;
+                border-radius: 40px;
+                }
 
             form {
                 margin: 0 auto;
-                width:450px;
-                background-color:gold;
-                font-family: helvetica;
-                margin-top:25px;
+
+                width:75%;
+                background-color:#F0E0D1;
+                font-family:'Poiret One', cursive;
+                font-size:14px;
                 padding:10px;
+                -webkit-border-radius: 20px;
+                -moz-border-radius: 20px;
+                border-radius: 20px;
+            }
+
+            option{
+            font-family: 'Poiret One', cursive;
+            }
+
+            form h2{
+            font-family:lobster;
+            }
+
+            input{
+            font-family: 'Poiret One', cursive;
+
+            }
+            button{
+            width:100px;
+            height:20px;
+            margin-left: 15px;
+            padding-bottom:10px;
+            font-family: 'Poiret One', cursive;
+            text-align:center;
 
             }
 
-            option {
 
-                margin: 15px;
 
-            }
-
-            input {
-
-                height: 20px;
-                width: 150px;
-                margin:3%;
-                border-radius: 8px;
-                -moz-border-radius: 8px;
-                -khtml-border-radius: 8px;
-                -webkit-border-radius: 8px;
-
-            }
-
-            .tc {
-                width: 200px;
-                height: 30px;
-                margin-left:10px;
-                padding-bottom:10px;
-            }
-
-            .tc label {
-
-            }
         </style>
 
     </head>
      <body>
+
      '''
         page_body ='''
+        <div class="box">
+        <h1>Fabulous Female Coders</h1>
+        <h2>Welcome to the place for the overlooked.</h2>
+        <h3>Stay updated on accomplishments of females in the coding world!</h3>
+
             <form method="GET" action="">
+            <h2><b>Sign up for our newsletters</b></h2>
     <label>Name:</label>
     <input type="text" name="user" />
     <br/>
     <label>Email:</label>
     <input type="text" name="email" />
     <br/>
-    <label>Send me emails..</label>
+    <label>Send emails: </label>
     <select name="activity">
         <option value="daily">Daily</option>
         <option value="weekly">Weekly</option>
@@ -80,13 +112,14 @@ class MainHandler(webapp2.RequestHandler): #declaring a class
         <option value="monthly">Monthly</option>
     </select>
     <br/>
-    <input type="submit" value="Submit" />
-    <br/>
-        <div class="tc">
-            <label>
-                <input type="checkbox" value="ready" name="ready" required/>Terms and Conditions
+           <label class="pure-checkbox">
+              <input type="checkbox" value="ready" name="ready" required><small><i>Terms and Conditions</i></small>
             </label>
-         </div>
+
+    <br/>
+    <button type="submit" value="Submit" />Submit</button>
+
+
                 '''
 
         page_close = '''
