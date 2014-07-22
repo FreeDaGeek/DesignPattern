@@ -60,14 +60,11 @@ class FormPage(Page):
             except:
                 self._form_inputs += ' " />'
         print self._form_inputs
-    def _print_out_form(self):
+
+    #Polymorphism Alert!  method overriding
+    
+    def _print_ou(self):
         return self._head + self._body + self._form_open + self._form_inputs + self._form_close + self._close
-
-
-
-
-
-
 
 
 app = webapp2.WSGIApplication([
