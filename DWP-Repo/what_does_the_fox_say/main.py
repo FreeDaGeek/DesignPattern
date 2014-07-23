@@ -10,11 +10,42 @@ import webapp2
 class MainHandler(webapp2.RequestHandler):
     def get(self):
         #method array
+        animals = ["Panther()", "Dolphin()", "Fox()"]
         # self.response.write('Hello world!')
 
-        #default html
+        #html
         title = "What does the Fox Say?"
         css = "css/main.css"
+        page_head = """
+<!DOCTYPE HTML>
+    <html>
+        <head><title>What Does the Fox Say?</title>
+        <link href= rel="stylesheet type="text/css />
+        </head>
+        <body>
+            """
+        page_body = "" \
+                    "<header><h1>Animal:</h1><header>" \
+                        "<div class='info'>" \
+                            "<button class='first'>Panther</button>" \
+                            "<button class='second'>Dolphin</button>" \
+                            "<button class='third'>Fox</button>" \
+                    ""
+        page_close = """
+        </div>
+        </body>
+    </html>"""
+
+        #statment that get the the GET info on the page
+
+
+        #gets the value of the animal and store it
+
+        #request which class to connect to
+
+        
+
+
 
 
 app = webapp2.WSGIApplication([
