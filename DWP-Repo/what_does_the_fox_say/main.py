@@ -53,15 +53,6 @@ class MainHandler(webapp2.RequestHandler):
                 #prints details
                 total = total.format(**locals())
 
-
-
-
-
-
-
-
-
-
 app = webapp2.WSGIApplication([
     ('/', MainHandler)
 ], debug=True)

@@ -1,4 +1,4 @@
-class Animal(object): #abstract class-- used as a template
+class Animals(object): #abstract class-- used as a template
     def __init__(self):
         #empty variable space for the sub classes to fill in
         self._phylum = ''
@@ -11,9 +11,11 @@ class Animal(object): #abstract class-- used as a template
         self._habitat = ''
         self.geolocation = ''
 
+#template - html
         self._title = ''
         self._css = "css/style.css"
         self.head = """
+
 <!DOCTYPE HTML>
 <html>
     <head>
@@ -24,11 +26,20 @@ class Animal(object): #abstract class-- used as a template
         """
         self.body = "What does the FOX say?" \
                    "<a href='/'><button>Return</button></a>" \
-                    "<a href='" + self.play_sound() + "'><button>Sound</button></a>"
+                   # "<a href='" + self.play_sound() + "'><button>Sound</button></a>"
 
         self.close = """
     </body>
 </html> """
+
+    def print_out(self):
+        total = self._page_head + self._page_body + self._page_close
+        total = total.format(**locals())
+        return total  #print on page
+
+    def play_sound(self):
+        pass
+
 
 
 
