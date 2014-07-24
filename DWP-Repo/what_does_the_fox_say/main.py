@@ -36,6 +36,11 @@ class MainHandler(webapp2.RequestHandler):
         </body>
     </html>"""
 
+        def print_out(self):
+            return page_head + page_body + page_close
+
+
+
         #statment that get the the GET info on the page
 
 
@@ -43,7 +48,7 @@ class MainHandler(webapp2.RequestHandler):
 
         #request which class to connect to
 
-        
+
 
 
 
