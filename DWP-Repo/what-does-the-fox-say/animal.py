@@ -41,10 +41,12 @@ class Animals(object): #abstract class-- used as a template
     def play_sound(self):
         pass
 
+
 #panther's info
 class Panther(Animals):
     def __init__(self):
-        super(Panther, self).__init__() #const. function -- super class
+        super(Panther, self).__init__()
+        #const. function -- super class
 
         #data for the empty var in the super class above
         self._title = "What does the Panther Say?"
@@ -82,7 +84,8 @@ class Panther(Animals):
 #dolphin's info
 class Dolphin(Animals):
     def __init__(self):
-        super(Dolphin, self).__init__() #const. function -- super class
+        super(Dolphin, self).__init__()
+        #const. function -- super class
 
         #data for the empty var in the super class above
         self._title = "What does the Dolphin Say?"
@@ -120,7 +123,8 @@ class Dolphin(Animals):
 #fox's info
 class Fox(Animals):
     def __init__(self):
-        super(Fox, self).__init__() #const. function -- super class
+        super(Fox, self).__init__()
+        #const. function -- super class
         #data for the empty var in the super class above
         self._title = "What does the Fox Say?"
         self._phylum = 'Chordata'
@@ -151,4 +155,5 @@ class Fox(Animals):
     def print_out(self):
         total = self._page_head + self._page_body + self._list_open + self._list_close + self._page_close
         total = total.format(**locals())
-        return total #print info on the page
+        return total
+        #print info on the page

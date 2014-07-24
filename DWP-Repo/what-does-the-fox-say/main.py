@@ -13,11 +13,11 @@ class MainHandler(webapp2.RequestHandler):
         array = ["Panther()", "Dolphin()", "Fox()"]
         # self.response.write('Hello world!')
 
-        
         #html
-        title = "What does the Fox Say?"
-        css = "css/style.css"
-        page_head = """
+        a = Animals()
+        a.title = "What does the Fox Say?"
+        a.css = "css/style.css"
+        a.page_head = """
 <!DOCTYPE HTML>
     <html>
         <head><title>What Does the Fox Say?</title>
