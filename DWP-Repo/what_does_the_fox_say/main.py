@@ -5,7 +5,6 @@ DPW-01
 What Does the Fox Say?
 """
 import webapp2
-#from animals import Panther, Dolphin, Fox
 
 class MainHandler(webapp2.RequestHandler):
     def get(self):
@@ -35,8 +34,30 @@ class MainHandler(webapp2.RequestHandler):
         </body>
     </html>"""
 
+        if self.request.GET:
+            a = self.request.GET["animals"]
 
-    
+            if a == array[0]:
+               a = Panther()
+               self.response.write(a.print_out())
+
+            elif a == array[1]:
+                 a = Dolphin()
+                 self.response.write(a.print_out())
+
+            elif a == array[2]:
+                 a = Fox()
+                 self.response.write(a.print_out())
+            else:
+                total = page_head + page_body + page_close
+                #prints details
+                total = total.format(**locals())
+
+
+
+
+
+
 
 
 
