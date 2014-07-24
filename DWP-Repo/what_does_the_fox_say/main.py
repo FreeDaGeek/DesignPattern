@@ -5,11 +5,12 @@ DPW-01
 What Does the Fox Say?
 """
 import webapp2
+from animal import Panther, Dolphin, Fox
 
 class MainHandler(webapp2.RequestHandler):
     def get(self):
         #method array
-        array = ["Panther()", "Dolphin()", "Fox()"]
+        array = ["panther()", "dolphin()", "fox()"]
         # self.response.write('Hello world!')
 
         #html
@@ -32,7 +33,7 @@ class MainHandler(webapp2.RequestHandler):
         page_close = """
         </div>
         </body>
-    </html>"""
+</html>"""
 
         if self.request.GET:
             a = self.request.GET["animals"]
@@ -48,10 +49,10 @@ class MainHandler(webapp2.RequestHandler):
             elif a == array[2]:
                  a = Fox()
                  self.response.write(a.print_out())
-            else:
-                total = page_head + page_body + page_close
-                #prints details
-                total = total.format(**locals())
+        else:
+            total = page_head + page_body + page_close
+            #prints details
+            total = total.format(**locals())
 
 app = webapp2.WSGIApplication([
     ('/', MainHandler)

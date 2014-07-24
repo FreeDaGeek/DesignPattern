@@ -40,6 +40,28 @@ class Animals(object): #abstract class-- used as a template
     def play_sound(self):
         pass
 
+class Panther(Animals):
+    def __init__(self):
+        super(Panther, self).__init__() #const. function -- super class
+
+        self._title = "What does the Panther Say?"
+        self._phylum = 'Chordata'
+        self._classs = 'Mammalia'
+        self._order = 'Carnivora'
+        self._family = 'Felidae'
+        self._genus = 'Puma'
+        self._image = ''
+        self._lifespan = '12 years in the wild'
+        self._habitat = 'Wetland/Saw palmetto'
+        self.geolocation = 'Florida- Everglades'
+
+
+
+
+
+
+
+
 
 
 
