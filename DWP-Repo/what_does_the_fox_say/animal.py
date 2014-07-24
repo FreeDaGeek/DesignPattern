@@ -9,7 +9,7 @@ class Animals(object): #abstract class-- used as a template
         self._image = ''
         self._lifespan = ''
         self._habitat = ''
-        self.geolocation = ''
+        self._geolocation = ''
 
 #template - html
         self._title = ''
@@ -40,6 +40,7 @@ class Animals(object): #abstract class-- used as a template
     def play_sound(self):
         pass
 
+
 class Panther(Animals):
     def __init__(self):
         super(Panther, self).__init__() #const. function -- super class
@@ -53,7 +54,19 @@ class Panther(Animals):
         self._image = ''
         self._lifespan = '12 years in the wild'
         self._habitat = 'Wetland/Saw palmetto'
-        self.geolocation = 'Florida- Everglades'
+        self._geolocation = 'Florida- Everglades'
+        self._list_open = "<h1>The Panther:</h1>"\
+                          "<ul><li>Phylum: " + self._phylum + "</li>"\
+                          "<li>Class: " + self._classs + "</li>"\
+                          "<li>Order: " + self._order + "</li>"\
+                          "<li>Family: " + self._family + "</li>"\
+                          "<li>Genus: " + self._genus + "</li>"\
+                          "<li>Image: " + self._image + "</li>"\
+                          "<li>Lifespan: " + self._lifespan + "</li>"\
+                          "<li>Habitat: " + self._habitat + "</li>"\
+                          "<li>Geolocation: " + self._geolocation + "</li>"\
+
+        self.list_close = "</ul>"
 
 
 
