@@ -13,14 +13,15 @@ class MainHandler(webapp2.RequestHandler):
         array = ["Panther()", "Dolphin()", "Fox()"]
         # self.response.write('Hello world!')
 
+        
         #html
         title = "What does the Fox Say?"
-        css = "css/main.css"
+        css = "css/style.css"
         page_head = """
 <!DOCTYPE HTML>
     <html>
         <head><title>What Does the Fox Say?</title>
-        <link href= rel="stylesheet type="text/css />
+        <link href="{css}" rel="stylesheet" type="text/css" />
         </head>
         <body>
             """
@@ -55,7 +56,6 @@ class MainHandler(webapp2.RequestHandler):
                 #prints details
             total = total.format(**locals())
             self.response.write(total) #prints info onto the page
-
 
 
 app = webapp2.WSGIApplication([

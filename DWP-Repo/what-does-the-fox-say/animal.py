@@ -20,7 +20,7 @@ class Animals(object): #abstract class-- used as a template
 <html>
     <head>
     <title>{self.title}</title>
-    <link href ="{self.css}" rel="stylesheet" text/css=text/css/>
+    <link href="{self.css}" rel="stylesheet" type="text/css" />
     </head>
     <body>
         """

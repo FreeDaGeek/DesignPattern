@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/what_does_the_fox_say.iml" filepath="$PROJECT_DIR$/.idea/what_does_the_fox_say.iml" />
+      <module fileurl="file://$USER_HOME$/Github/DesignPattern/DWP-Repo/what-does-the-fox-say/.idea/what_does_the_fox_say.iml" filepath="$USER_HOME$/Github/DesignPattern/DWP-Repo/what-does-the-fox-say/.idea/what_does_the_fox_say.iml" />
     </modules>
   </component>
 </project>
