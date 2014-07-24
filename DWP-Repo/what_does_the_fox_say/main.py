@@ -10,7 +10,7 @@ import webapp2
 class MainHandler(webapp2.RequestHandler):
     def get(self):
         #method array
-        animals = ["Panther()", "Dolphin()", "Fox()"]
+        array = ["Panther()", "Dolphin()", "Fox()"]
         # self.response.write('Hello world!')
 
         #html
@@ -25,30 +25,18 @@ class MainHandler(webapp2.RequestHandler):
         <body>
             """
         page_body = "" \
-                    "<header><h1>Animal:</h1><header>" \
-                        "<div class='info'>" \
-                            "<button class='first'>Panther</button>" \
-                            "<button class='second'>Dolphin</button>" \
-                            "<button class='third'>Fox</button>" \
-                    ""
+                     "<header><h1>Animal:</h1><header>" \
+                             "<a href=?animals=" + array[0] + "><button class='first'>Panther</button>" \
+                             "<a href=?animals=" + array[1] + "><button class='second'>Dolphin</button>" \
+                             "<a href=?animals=" + array[2] + "><button class='third'>Fox</button>" \
+                     ""
         page_close = """
         </div>
         </body>
     </html>"""
 
-        def print_out(self):
-            return page_head + page_body + page_close
 
-
-
-        #statment that get the the GET info on the page
-
-
-        #gets the value of the animal and store it
-
-        #request which class to connect to
-
-
+    
 
 
 
