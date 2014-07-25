@@ -10,8 +10,6 @@ class MainHandler(webapp2.RequestHandler):
 
         self.response.write(p.whole_page)
 
-
-
 app = webapp2.WSGIApplication([
     ('/', MainHandler)
 ], debug=True)

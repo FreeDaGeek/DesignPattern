@@ -7,7 +7,7 @@ class Page(object):
 <html>
     <head>
     <title>{self.title}</title>
-    <link href ="{self.css}" rel="stylesheet" text/css=text/css/>
+    <link href ="{self.css}" rel="stylesheet" type=text/css/>
     </head>
     <body>
         """
@@ -17,7 +17,7 @@ class Page(object):
     </body>
 </html>
         """
-        self.whole_page =""
+        self.whole_page = ""
 
     def update(self):
         self.whole_page = self.head + self.body + self.close

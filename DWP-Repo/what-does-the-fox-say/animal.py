@@ -20,7 +20,7 @@ class Animals(object): #abstract class-- used as a template
 <html>
     <head>
     <title>{self.title}</title>
-    <link href="{self.css}" rel="stylesheet" type="text/css" />
+    <link href="self.css" rel="stylesheet" type="text/css" />
     </head>
     <body>
         """
@@ -156,4 +156,3 @@ class Fox(Animals):
         total = self._page_head + self._page_body + self._list_open + self._list_close + self._page_close
         total = total.format(**locals())
         return total
-        #print info on the page
