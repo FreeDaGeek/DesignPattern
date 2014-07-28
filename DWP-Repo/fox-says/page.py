@@ -15,12 +15,12 @@ class Page(object):
         self.links = '''
         <nav>
             <ul>
-                <a href=?animals=0" + array[0] + "><button class='first'>Panther</button>
-                <a href=?animals=1" + array[1] + "><button class='second'>Dolphin</button>
-                <a href=?animals=2" + array[2] + "><button class='third'>Fox</button>"
+                <a href=?animals=0" + array[0] + "><button class='first'>Panther</button></br>
+                <a href=?animals=1" + array[1] + "><button class='second'>Dolphin</button></br>
+                <a href=?animals=2" + array[2] + "><button class='third'>Fox</button>
             </ul>
-        </nav>'''
-
+        </nav>
+        '''
         self.footer = '''
     </body>
 
