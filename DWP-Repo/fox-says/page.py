@@ -1,40 +1,41 @@
 class Page(object):
     def __init__(self):
-        self.__title = "What does the Fox say?"
-        self.__css = "css/style.css"
-        self.head = """
+        self.title = "What does the Fox say?"
+        self.header = '''
 <!DOCTYPE HTML>
 <html>
     <head>
-    <title>{self.__title}</title>
-    <link href="{self.__css}" rel ="stylesheet" type="text/css" />
+        <title>What does the FOX say?</title>
+        <link href="{self.__css}" rel ="stylesheet" type="text/css" />
     </head>
     <body>
-    """
-        self.body = "<h1>What does the Fox say?</h1><nav><ul><li>Panther</li><li>Dolphin</li><li>Fox</li></ul></nav>"
-        self.close = """
+        <div id = "container">
+        <h1>What does the fox say?</h1> '''
+
+        self.links = '''
+        <nav>
+            <ul>
+                <a href=?animals=0" + array[0] + "><button class='first'>Panther</button>
+                <a href=?animals=1" + array[1] + "><button class='second'>Dolphin</button>
+                <a href=?animals=2" + array[2] + "><button class='third'>Fox</button>"
+            </ul>
+        </nav>'''
+
+        self.footer = '''
     </body>
+
+    <footer>
+    <p>Copyright &copy; 2014 What does the FOX say?</p>
+    </footer>
+    </div><!-- closes "container" div -->
 </html>
-        """
-        self.whole_page =""
+        '''
 
-    def update(self):
-        self.whole_page = self.head + self.body + self.close
-        self.whole_page = self.whole_page.format(**locals())
-        ""
+    def header(self):
+        return self.header
 
-    @property
-    def title(self):
-        return self.__title
+    def links(self):
+        return self.links
 
-    @title.setter
-    def title(self, new_title):
-        self.__title = new_title
-
-    @property
-    def css(self):
-        return self.__css
-
-    @css.setter
-    def css(self, new_css_file):
-        self.__css = new_css_file
+    def footer(self):
+        return self.footer
