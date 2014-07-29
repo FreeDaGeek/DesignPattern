@@ -6,7 +6,7 @@ class Page(object):
 <html>
     <head>
         <title>What does the FOX say?</title>
-        <link href="{self.__css}" rel ="stylesheet" type="text/css" />
+        <link rel="stylesheet" href="css/style.css" type="text/css" />
     </head>
     <body>
         <div id = "container">
