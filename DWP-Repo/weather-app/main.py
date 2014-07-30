@@ -5,7 +5,7 @@ class MainHandler(webapp2.RequestHandler):
     def get(self):
         p = FormPage()
         p.inputs = [['first_name', 'text', 'First Name'], ['last_name', 'text',  'Last Name'], ['Submit', 'submit']]
-        self.response.write(p._print_out_form())
+        self.response.write(p.print_out())
 
 class Page(object): #borrowing stuff from the object class
     def __init__(self): #constuctor
@@ -13,12 +13,10 @@ class Page(object): #borrowing stuff from the object class
 <!DOCTYPE HTML>
 <html>
     <head>
-    <title></title>
+    <title>Weather App</title>
     </head>
     <body>'''
-
-
-        self._body = 'Filler'
+        self._body = 'Weather-App'
         self._close = '''
     </body>
 <html>'''
@@ -26,12 +24,13 @@ class Page(object): #borrowing stuff from the object class
     def print_out(self):
         return self._head + self._body + self._close
 
+
 class FormPage(Page):
     def __init__(self):
         #constructor function
         #Page.__init__()
         super(FormPage, self).__init__()
-        self._form_open ='<form method="GET">'
+        self._form_open = '<form method="GET">'
         self._form_close = '</form>'
         self._inputs = []
         self._form_inputs = ''
@@ -41,8 +40,8 @@ class FormPage(Page):
         #<input type="submit" value="Submit />
 
     @property
-    def inputs(self):
-        pass
+    def inputs(self)
+
 
     @inputs.setter
     def inputs(self, arr):
@@ -62,8 +61,7 @@ class FormPage(Page):
         print self._form_inputs
 
     #Polymorphism Alert!  method overriding
-    
-    def _print_ou(self):
+    def _print_out(self):
         return self._head + self._body + self._form_open + self._form_inputs + self._form_close + self._close
 
 
