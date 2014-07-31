@@ -56,6 +56,11 @@ class BeerModel(object):
         list = self.__xmldoc = minidom.parse(results)
         self.dos = []
 
+        for item in list:
+            do = BeerData()
+            do.beer =tag.attributes[]
+
+
 
 
 
