@@ -71,6 +71,16 @@ class MovieModel(object):
         #sorting Data
         #empty array to hold the info we use from API
         self.dos = []
+        #holds the list inthe API
+        for item in list:
+            #calls MovieData to later store
+            do = MovieData()
+            do.title = item.getElementsByTagName('title')[0].firstChild.nodeValue
+            do.year = item.getElementsByTagName('year')[0].firstChild.data
+            do.id = item.getElementsByTagName('imdbID')[0].firstChild.data
+            #sends the data to the empty array
+            self._dos.append(do)
+            
 
 #The Data - stores info
 class MovieData(object):
