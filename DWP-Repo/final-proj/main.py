@@ -4,32 +4,32 @@ Free Rosas
 '''
 import webapp2
 import urllib2
-from xml.dom import minidom
-
+import json
+#from xml.dom import minidom
 
 class MainHandler(webapp2.RequestHandler):
     def get(self):
         p = FormPage()
-        p.inputs = [['beer', 'text', 'beer type'], ['submit', 'submit']]
+        p.inputs = [['zip', 'text', 'Zipcode'], ['submit', 'submit']]
 
         if self.request.GET:
             #creates our model
-            bm =BeerModel()
-            bm.beer = self.response.GET['beer']
-            bm.call_api()
+            sm =SchoolModel()
+            sm.school = self.response.GET['school']
+            sm.call_api()
 
             #creates out view
-            bv = BeerView()
+            sv = SchoolView()
             #takes data object from model class and give it to view
-            bv.bdos = bm.dos
-            p._body = bv.content
+            sv.bdos = sm.dos
+            p._body = sv.content
 
         self.response.write(p.print_out())
 
       #this class shows the data
-class BeerView(object):
+class SchoolView(object):
     def __init__(self):
-        self.__bdos =[]
+        self.__sdos =[]
         self.__content = '<br/>'
 
     def update(self):
@@ -39,34 +39,30 @@ class BeerView(object):
 
 
 
-class BeerModel(object):
+class SchoolModel(object):
     def __init__(self):
-        self.__url ='https://www.thebeerspot.com/api/'
-        self.__beer_type = ''
-        self.__beer_name = ''
-        self.__xmldoc = ''
+        self.__url ='http://code.org/schools.json'
+        self.__school_type = ''
+        self.__school_name = ''
+        self.__jsondoc = ''
 
 
     def __call_api(self):
-        request = urllib2.Request(self.__url + self.__beer_type + self.__beer_name)
+        request = urllib2.Request(self.__url + self.__school_type + self.__school_name)
         opener = urllib2.build_opener()
         results = opener.open(request)
-        #parse data
-        self.xmldoc = minidom.parse(results)
-        list = self.__xmldoc = minidom.parse(results)
-        self.dos = []
 
-        for item in list:
-            do = BeerData()
-            do.beer =tag.attributes[]
+        #parse data w/ json
+        jsondoc = json.load(results)
 
+        name = jsondoc['name']
+        condition = jsondoc['weather'][0]['description']
 
+        self.response.write("School Found: " + name + "<br/>"+condition)
 
 
 
-
-
-class BeerData(object):
+class SchoolData(object):
     def __init__(self):
         pass
 
@@ -79,12 +75,12 @@ class Page(object):
 <!DOCTYPE HTML>
 <html>
     <head>
-        <title>Find My Beer</title>
+        <title>Find My </title>
         <link href="css/main.css" rel="stylesheet" type="text/css" />
     </head>
     <body>'''
 
-        self._body = '<h1>Beer Finder</h1>'
+        self._body = '<h1>Schools near by</h1>'
         self._close = '''
     </body>
 </html>'''
@@ -120,7 +116,7 @@ class FormPage(Page):
                 self._form_inputs += '" />'
 
     def print_out(self):
-        return self._head + "Find My Beer!"+ self._form_open + self._form_inputs + self._form_close + self._body + self._close
+        return self._head + "Local School Found"+ self._form_open + self._form_inputs + self._form_close + self._body + self._close
 
 
 app = webapp2.WSGIApplication([
