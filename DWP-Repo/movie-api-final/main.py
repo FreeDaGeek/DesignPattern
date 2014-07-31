@@ -32,16 +32,45 @@ class MainHandler(webapp2.RequestHandler):
 class MovieView(object):
     '''This class deals with how the data will be seen by the user '''
     def __init__(self):
-        pass
+        #document array
+        self.__mdos = []
+        #default content
+        self.__content = '<br />'
+
+    #updated the view when called
+    def update(self):
+        #loops through the document obj
+        for do in self.__mdos:
+            #adds content to obj
+            self.__content += '<div id="movies"><a href="' + do.href + '" title = Click submit">' + do.title
 
 
 #the Model
 class MovieModel(object):
     '''this model works with the info by fetching and parsing and sorting'''
     def __init__(self):
-        pass
+        #url to the API
+        self.__url = "http://www.omdbapi.com/?s="
+        self.__title = ''
+        self.__xmldoc = ''
 
+    def call_api(self):
+        #request and loads info from API
+        #assemple the request
+        request = urllib2.Request(self.__url + "title: " + self.__title + "&format=xml")
 
+        #urllib to create an obj to the url
+        opener = urllib2.build_opener()
+
+        #use the url to get a result - request info from teh API
+        result = opener.open(request)
+
+        #Parsing Data
+        self.__xmldoc = minidom.parse(result)
+
+        #sorting Data
+        #empty array to hold the info we use from API
+        self.dos = []
 
 #The Data - stores info
 class MovieData(object):
