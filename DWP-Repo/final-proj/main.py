@@ -42,17 +42,20 @@ class BeerView(object):
 class BeerModel(object):
     def __init__(self):
         self.__url ='https://www.thebeerspot.com/api/'
-        self._beer_type = ''
-        self._beer_name = ''
-
+        self.__beer_type = ''
+        self.__beer_name = ''
+        self.__xmldoc = ''
 
 
     def __call_api(self):
-        request = urllib2.Request(self.__url + self._beer_type + self._beer_name)
+        request = urllib2.Request(self.__url + self.__beer_type + self.__beer_name)
         opener = urllib2.build_opener()
         results = opener.open(request)
         #parse data
         self.xmldoc = minidom.parse(results)
+        list = self.__xmldoc = minidom.parse(results)
+        self.dos = []
+
 
 
 
