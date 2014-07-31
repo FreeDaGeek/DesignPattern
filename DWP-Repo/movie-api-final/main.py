@@ -15,7 +15,7 @@ class MainHandler(webapp2.RequestHandler):
             #create our model
             mm = MovieModel()
             #sends our user input from the url to the model
-            mm.titles = self.request.GET['titles']
+            mm.title = self.request.GET['title']
             #connect to the API
             mm.call_api()
             #creates view
@@ -107,14 +107,37 @@ class MovieData(object):
 #Page template
 class Page(object):
     def __init__(self):
-        pass
+        #basic htm to load the page
+        self._head = '''
+        <!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Movie Info</title>
+        <link href="css/main.css" rel="stylesheet" type="text/css" />
+    </head>
+    <body>'''
+        self._body = ''
+        self._close = '''
+    </body>
+    </div>
+</html>'''
 
+#print_out override
+    def print_out(self):
+        return self._head + self._body + self._close
 
 
 #form that inherits from page class
 class FormPage(Page):
     def __init__(self):
-        pass
+        #consturctor func w/super class
+        super(FormPage,self).__init__()
+        self._form_open = '<form method="GET">'
+        self._form_close = '</form>'
+
+    def print_out(self):
+        #fill out the html after the body
+        return self._head + "<div id='wrapper'><h1>Movie Info</h1>"+ self._form_open + '<input type="text" name="title" placeholder="Enter Movie Here"/>'+'<input class="btn" type="submit" value="Search" />' + self._form_close
 
 
 app = webapp2.WSGIApplication([
