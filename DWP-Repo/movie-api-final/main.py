@@ -15,7 +15,7 @@ class MainHandler(webapp2.RequestHandler):
             #create our model
             mm = MovieModel()
             #sends our user input from the url to the model
-            mm.title = self.request.GET['title']
+            mm.titles = self.request.GET['titles']
             #connect to the API
             mm.call_api()
             #creates view
@@ -71,7 +71,7 @@ class MovieModel(object):
         #sorting Data
         #empty array to hold the info we use from API
         self.dos = []
-        #holds the list inthe API
+        #holds the list in the API
         for item in list:
             #calls MovieData to later store
             do = MovieData()
@@ -80,16 +80,39 @@ class MovieModel(object):
             do.id = item.getElementsByTagName('imdbID')[0].firstChild.data
             #sends the data to the empty array
             self._dos.append(do)
-            
+
+    #getter for data obj array
+    @property
+    def dos(self):
+        return self._dos
+
+    # getter for the empty var title
+    @property
+    def titles(self):
+        pass
+
+    #setter for var title and update the info inside
+    @titles.setter
+    def title(self, titles):
+        self.__title = titles
+
 
 #The Data - stores info
 class MovieData(object):
     def __init__(self):
-        pass
-
+        self.title = ''
+        self.href = ''
+        self.titles = ''
 
 #Page template
 class Page(object):
+    def __init__(self):
+        pass
+
+
+
+#form that inherits from page class
+class FormPage(Page):
     def __init__(self):
         pass
 
