@@ -57,7 +57,7 @@ class MovieView(object):
 
     @mdos.setter
     def mdos(self, arr):
-        self.__mdos = arr
+        self.mdos = arr
         self.update()
 
 
@@ -69,8 +69,6 @@ class MovieModel(object):
         self.__url = "http://www.omdbapi.com/?r="
         self.__name = 'title'
         self.__xmldoc = ''
-
-
 
     def call_api(self):
         #request and loads info from API
