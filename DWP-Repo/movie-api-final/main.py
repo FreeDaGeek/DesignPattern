@@ -3,19 +3,22 @@ Fridelande Rosas
 7/31/2014
 Final Project: Api
 '''
+
 import webapp2
 import urllib2
 from xml.dom import minidom
 
+
 class MainHandler(webapp2.RequestHandler):
     def get(self):
         p = FormPage()
+        p.inputs = [['name', 'text', 'title'], ['Submit', 'submit']]
         #makes the page load correctly w/ GET
         if self.request.GET:
             #create our model
             mm = MovieModel()
             #sends our user input from the url to the model
-            mm.title = self.request.GET['title']
+            mm.name = self.request.GET['title']
             #connect to the API
             mm.call_api()
             #creates view
@@ -30,7 +33,7 @@ class MainHandler(webapp2.RequestHandler):
 
 #the View
 class MovieView(object):
-    '''This class deals with how the data will be seen by the user '''
+    """This class deals with how the data will be seen by the user """
     def __init__(self):
         #document array
         self.__mdos = []
@@ -44,20 +47,37 @@ class MovieView(object):
             #adds content to obj
             self.__content += '<div id="movies"><a href="' + do.href + '" title = Click submit">' + do.title
 
+    @property
+    def content(self):
+        return self.__content
+
+    @property
+    def mdos(self):
+        pass
+
+    @mdos.setter
+    def mdos(self, arr):
+        self.__mdos = arr
+        self.update()
+
 
 #the Model
 class MovieModel(object):
     '''this model works with the info by fetching and parsing and sorting'''
     def __init__(self):
         #url to the API
-        self.__url = "http://www.omdbapi.com/?s="
-        self.__title = ''
+        self.__url = "http://www.omdbapi.com/?r="
+        self.__name = 'title'
         self.__xmldoc = ''
+
+
 
     def call_api(self):
         #request and loads info from API
         #assemple the request
-        request = urllib2.Request(self.__url + "title: " + self.__title + "&format=xml")
+        request = urllib2.Request(self.__url + self.__name)
+
+        print self.__url + self.__name
 
         #urllib to create an obj to the url
         opener = urllib2.build_opener()
@@ -67,17 +87,17 @@ class MovieModel(object):
 
         #Parsing Data
         self.__xmldoc = minidom.parse(result)
-
         #sorting Data
         #empty array to hold the info we use from API
-        self.dos = []
+        self._dos = []
+        list = self.__xmldoc.getElementsByTagName('title')
         #holds the list in the API
-        for item in list:
+        for tag in list:
             #calls MovieData to later store
             do = MovieData()
-            do.title = item.getElementsByTagName('title')[0].firstChild.nodeValue
-            do.year = item.getElementsByTagName('year')[0].firstChild.data
-            do.id = item.getElementsByTagName('imdbID')[0].firstChild.data
+            do.title = tag.attributes['title'].value
+            do.year = tag.attributes['year'].value
+            do.id = tag.attributes['imdbID'].value
             #sends the data to the empty array
             self._dos.append(do)
 
@@ -88,13 +108,13 @@ class MovieModel(object):
 
     # getter for the empty var title
     @property
-    def titles(self):
+    def title(self):
         pass
 
     #setter for var title and update the info inside
-    @titles.setter
-    def title(self, titles):
-        self.__title = titles
+    @title.setter
+    def title(self, s):
+        self.__name = s
 
 
 #The Data - stores info
@@ -103,6 +123,7 @@ class MovieData(object):
         self.title = ''
         self.href = ''
         self.titles = ''
+
 
 #Page template
 class Page(object):
@@ -131,13 +152,16 @@ class Page(object):
 class FormPage(Page):
     def __init__(self):
         #consturctor func w/super class
-        super(FormPage,self).__init__()
+        super(FormPage, self).__init__()
+
         self._form_open = '<form method="GET">'
         self._form_close = '</form>'
 
     def print_out(self):
         #fill out the html after the body
-        return self._head + "<div id='wrapper'><h1>Movie Info</h1>"+ self._form_open + '<input type="text" name="title" placeholder="Enter Movie Here"/>'+'<input class="btn" type="submit" value="Search" />' + self._form_close
+        return self._head + "<div id='wrapper'><h1>Movie Info</h1>" + self._form_open + \
+            '<input type="text" name="title" placeholder="Enter Movie Here"/>' + \
+            '<input class="btn" type="submit" value="Search" />' + self._form_close
 
 
 app = webapp2.WSGIApplication([
